@@ -1,0 +1,10 @@
+--- # move file to remote system
+- hosts: all
+  become: ssh
+  become_method: sudo
+  connection: ssh
+  tasks:
+    - name: copy template to remote system
+      template:
+        src: /etc/services
+        dest: /tmp
